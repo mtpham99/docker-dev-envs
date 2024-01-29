@@ -1,0 +1,71 @@
+[build-system]
+requires      =
+build-backend =
+
+[project]
+name        =
+version     =
+description =
+
+authors = [
+  { name = , email = },
+]
+
+readme = "README.md"
+license = {file = "LICENSE.md"}
+
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3.10"
+]
+
+dependencies = [
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "pre-commit",
+    "pylint"
+]
+
+[project.urls]
+"Homepage"    =
+"Source"      =
+"Bug Tracker" =
+
+[tool.black]
+line-length = 79
+include = ".pyi?$"
+exclude = """
+/(
+    .git
+    | .hg
+    | .mypy_cache
+    | .tox
+    | .venv
+    | _build
+    | buck-out
+    | build
+    | dist
+)/
+"""
+
+[tool.isort]
+line_length = 79
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_unused_ignores = true
+
+[tool.pylint]
+max-line-length = 79
+disable = [
+    "fixme",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "unnecessary-pass"
+]
